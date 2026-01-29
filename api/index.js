@@ -10,10 +10,12 @@ const Note = require("./dashboard/note")
 app.use(express.urlencoded({ extended: true }))
 app.use(express.json())
 app.use(cors())
-
+app.get("/", (req, res) => {
+    res.send("test Route")
+})
 app.use("/auth", authRoutes)
 app.use("/dashboard", authenticate)
 app.use("/dashboard", Note)
-app.listen(8000,()=>{
+app.listen(process.env.PORT || 8000,()=>{
     console.log("Server Started");
 })
