@@ -12,7 +12,7 @@ const [colorsToggle, setcolorsToggle] = useState(false);
         setTimeout(() => {
             settoastText("Logged out successfully")
             }, 3000);
-        window.location.href = "/signin";
+        window.location.href = "/";
     }
     
     
