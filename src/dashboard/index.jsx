@@ -10,7 +10,7 @@ function App({user}) {
      const [Note, setNote] = useState({});
 const [toastText, settoastText] = useState(null);
    useEffect(() => {
-    fetch("http://localhost:8000/dashboard/getNotes",{
+    fetch("https://todo-app-7ffy.onrender.com/dashboard/getNotes",{
         method : "POST",
         headers :{
             "Content-Type" : "application/json"
@@ -34,7 +34,7 @@ const [toastText, settoastText] = useState(null);
     console.log(Note);
     console.log(noteId,isNewNote)
         e.preventDefault()
-        await fetch(!isNewNote ? "http://localhost:8000/dashboard/updateNote" : "http://localhost:8000/dashboard/createNote",{
+        await fetch(!isNewNote ? "https://todo-app-7ffy.onrender.com/dashboard/updateNote" : "https://todo-app-7ffy.onrender.com/dashboard/createNote",{
             method : !isNewNote ? "PUT" : "POST",
             headers : {
                 "Content-Type" : "application/json",
@@ -50,7 +50,7 @@ const [toastText, settoastText] = useState(null);
         })
     }
     const deleteNote = async(id)=>{
-        await fetch("http://localhost:8000/dashboard/deleteNote",{
+        await fetch("https://todo-app-7ffy.onrender.com/dashboard/deleteNote",{
             method : "delete",
             headers : {
                 "Content-Type" : "application/json"

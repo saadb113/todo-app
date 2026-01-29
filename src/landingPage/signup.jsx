@@ -12,7 +12,7 @@ function App() {
     const handleSubmit = async(e)=>{
         e.preventDefault()
 
-        await fetch("http://localhost:8000/auth/signup", {
+        await fetch("https://todo-app-7ffy.onrender.com/auth/signup", {
             method: "POST",
             headers : {
                 "Content-Type": "application/json"

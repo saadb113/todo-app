@@ -16,7 +16,7 @@ function App() {
     setloading(false)
     return;
   }
-        fetch("http://localhost:8000/dashboard/authenticate", {
+        fetch("https://todo-app-7ffy.onrender.com/dashboard/authenticate", {
       headers: {
         Authorization: `Bearer ${token}`
       }
