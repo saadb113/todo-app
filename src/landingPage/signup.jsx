@@ -4,7 +4,7 @@ import '../App.css';
 import {Link,useNavigate} from "react-router-dom"
 import Toast from "../dashboard/components/toast"
 
-function App() {
+function App({handleLogin}) {
     const navigate = useNavigate()
     const [toastText, settoastText] = useState(null);
     
@@ -26,10 +26,8 @@ function App() {
         }).then(res=> res.json()).then(data=>{
             settoastText(data.message)
             if(data.status === 201){
-
-                setTimeout(() => {
-                }, 8000);
-                navigate("/signin")
+                localStorage.setItem("token", data.token)
+                handleLogin(data.user)
             }
         })
     }

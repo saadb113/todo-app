@@ -59,8 +59,8 @@ router.post("/signin",validateSignin, async (req, res) => {
     if(!comparePassword) return res.status(400).json({status:400, message: "Invalid password" })
 
     // CREATE TOKEN 
-    const token = await jwt.sign({email : findUser.email}, "Saad")
-    res.status(200).json({status : 201, message : "Signin successful", token,user:findUser})
+    const token = jwt.sign({email : findUser.email}, "Saad")
+    res.status(200).json({status : 201, message : "Logged in successfully", token,user:findUser})
     })
 
 module.exports = router;

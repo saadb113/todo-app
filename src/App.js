@@ -27,15 +27,17 @@ function App() {
       setuserData(null);
     }).finally(() => setloading(false));;
  }, []);
-
+ const handleLogin = (user)=>{
+  setuserData(user)
+}
   return (
     <div className="App">
       <BrowserRouter>
       {loading ? <div>Loading...</div> : (
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/signin" element={userData ? <Navigate to="/dashboard"/> : <Login /> } />
-          <Route path="/signup" element={<Signup />} />
+          <Route path="/signin" element={userData ? <Navigate to="/dashboard"/> : <Login handleLogin={handleLogin}/> } />
+          <Route path="/signup" element={<Signup handleLogin={handleLogin}/>} />
           <Route path="/dashboard" element={userData != null ? <Dashboard user={userData}/> : <Navigate to="/signin"/> } />
         </Routes>
       )}

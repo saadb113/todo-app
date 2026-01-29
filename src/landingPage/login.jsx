@@ -4,7 +4,7 @@ import '../App.css';
 import {Link, useNavigate} from "react-router-dom"
 import Toast from "../dashboard/components/toast"
 
-function App() {
+function App({handleLogin}) {
     const navigate = useNavigate()
 const [toastText, settoastText] = useState(null);
 
@@ -23,11 +23,10 @@ const [toastText, settoastText] = useState(null);
             })
         }).then(res=> res.json()).then(data=>{
             settoastText(data.message)
+            console.log(data.message);
             if(data.status === 201){
                 localStorage.setItem("token", data.token)
-                setTimeout(() => {
-                }, 3000);
-                window.location.href = "/dashboard"
+                handleLogin(data.user)
             }
         })
     }
@@ -51,15 +50,10 @@ const [toastText, settoastText] = useState(null);
                 <button type="submit">Sign In</button>
                 <p>Don't have an account? <Link to="/signup">Sign Up</Link></p>
             </form>
-            {
+                        {
                             toastText && (
                                 <Toast text={toastText}/>
                             )
-                        }{
-            
-                            setTimeout(() => {
-                                settoastText(null)
-                            }, 8000)
                         }
         </div>
     );
