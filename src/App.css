@@ -1,0 +1,716 @@
+@import url('https://fonts.cdnfonts.com/css/poppins');
+*{
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  padding: 0;
+  box-sizing: border-box;
+}
+html{
+  font-size: 62.5%;
+}
+header{
+  display: flex;
+}
+header nav{
+  max-width: 117rem;
+  display: flex;
+  margin: auto;
+  padding: 2rem 0;
+  width: 95%;
+  justify-content: space-between;
+  align-items: center;
+}
+header nav a{
+  font-size: 1.6rem;
+  color: #fcfcfc;
+  text-decoration: none;
+  opacity: .7;
+}
+header nav .links{
+  display: flex;
+  gap: 1.6rem;
+  align-items: center;
+}
+body{
+  background: #252525;
+}
+.heroSection{
+  display: flex;
+  max-width: 117rem;
+  width: 95%;
+  padding: 11rem 0;
+  align-items: center;
+  justify-content: space-between;
+  margin: auto;
+}
+.heroSection .herosection-left{
+  max-width: 50%;
+}
+.faqs h1,
+.features h1,
+.dashboard .mainSection h1,
+.heroSection .herosection-left h1{
+  font-size: 4.5rem;
+  line-height: 5rem;
+  color: white;
+}
+.faqs > p,
+.features > p,
+.heroSection .herosection-left p{
+  font-size: 2rem;
+      margin: 1.5rem 0;
+  line-height: 2.5rem;
+  color: #ffffffba;
+}
+.btn{
+  padding: 1rem 1.8rem;
+  background: transparent;
+  font-size: 1.6rem;
+  color: #ffffffba;
+  border-radius: 1rem;
+  border: 1px solid #ffffffba;
+  cursor: pointer;
+}
+.btn:hover{
+  border-color: white;
+  color: white;
+}
+.notes-card{
+  max-width: 32rem;
+  padding: 2.5rem;
+  border-radius: 2.1rem;
+}
+.notes-card h2{
+  font-size: 2rem;
+  line-height: 2.2rem;
+  margin-bottom: 1rem;
+  color: white;
+}
+.notes-card p{
+  font-size: 1.4rem;
+  line-height: 1.9rem;
+    color: #ffffffba;
+}
+.heroSection .herosection-right{
+  position: relative;
+}
+.heroSection .notes-card{
+  background: #8c1e32;
+  aspect-ratio: 1 / 1;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+.heroSection .notes-card:first-child{
+  background: #285096;
+  transform: rotate(-7deg) translateY(4px) translate(-18px);
+  position: absolute;
+  z-index: -1;
+
+}
+.features {
+  max-width: 111rem;
+  margin: auto;
+  width: 95%;
+  padding: 11rem 0;
+}
+.features h1,
+.features > p{
+  text-align: center;
+}
+.features h1{
+  margin-bottom: 2rem;
+}
+.features .cards{
+  margin-top: 4rem;
+  gap: 1rem;
+  justify-content: space-between;
+  display: flex;
+}
+.features .cards .card{
+  max-width: 26rem;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  border-radius: 2.1rem;
+  gap: 1.6rem;
+  background: #2f2f2f;
+}
+.features .cards .card .icon{
+width: 4.2rem;
+height: 4.2rem;
+border-radius: 1rem;
+display: flex;
+justify-content: center;
+align-items: center;
+background: #fcfcfc14;
+}
+.features .cards .card .icon svg{
+ font-size: 2.2rem;
+    color: #fcfcfc;
+}
+.features .cards .card h2{
+  font-size: 2rem;
+  line-height: 2.2rem;
+  color: white;
+}
+.features .cards .card p{
+  font-size: 1.4rem;
+  line-height: 1.9rem;
+    color: #ffffffba;
+}
+
+.faqs{
+  padding: 11rem 0;
+  max-width: 111rem;
+  width: 95%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.faqs .accordians{
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+  margin: auto;
+  max-width: 74rem;
+  margin-top: 4rem;
+width: 100%;
+}
+.faqs .accordians .accordian{
+  background: #2f2f2f;
+  border-radius: 1.6rem;
+  cursor: pointer;
+}
+.faqs .accordians .accordian h2{
+  color: white;
+  padding: 2rem 2.4rem;
+  font-size: 1.6rem;
+  font-weight: 500;
+  line-height: 1.9rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.form p,
+.faqs .accordians .accordian p{
+  color: #ffffffba;
+  display: none;
+  font-size: 1.6rem;
+  padding: 0 24px 20px;
+}
+.form p{
+  display: block;
+  text-align: center;
+  margin-top: 2rem;
+}
+.form p a{
+  color: #ce1c43;
+  text-decoration: none;
+}
+.faqs .accordians .accordian.active p{
+  display: block;
+}
+.faqs .accordians .accordian.active h2 svg{
+  transform: rotate(45deg);
+}
+
+.form{
+  margin: 5rem auto;
+  width: 95%;
+  padding: 4rem 2rem;
+  background: #1c1c1cb3;
+    border-radius: 16px;
+    border: 3px solid rgb(151 151 151 / 10%);
+    display: flex;
+    flex-direction: column;
+    max-width: 38rem;
+}
+.form h1{
+  font-size: 2.8rem;
+  line-height: 3.2rem;
+  color: white;
+  text-align: center;
+  margin-bottom: 4rem;
+}
+.form input{
+  margin-bottom: 2rem;
+  padding: 10px 12px;
+      background: #2a2a2ae6;
+    color: #fcfcfc;
+    border: 0;
+        border-radius: 6px;
+}
+.form button{
+  border-radius: .6rem;
+  border: 0;
+  cursor: pointer;
+  padding: 10px 12px;
+    background: #a91233;
+    color: #fff;
+    font-size: 1.6rem;
+}
+
+.dashboard .sidebar{
+  display: flex;
+  top: 0;
+  flex-direction: column;
+  width: 8rem;
+  align-items: center;
+  padding: 2rem 0;
+  justify-content: space-between;
+  height: 100vh;
+  position: fixed;
+  background: #1c1c1c;
+}
+.dashboard .sidebar .top{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+.dashboard .sidebar .addNote{
+  width: 4rem;
+  height: 4rem;
+  border-radius: 100%;
+  cursor: pointer;
+  background: #333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+      border: 0;
+      transition: all .3s ease;
+}
+.dashboard .sidebar .colors{
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  position: relative;
+  left: -100px;
+  opacity: 0;
+  transition: all .5s ease;
+}
+.dashboard .sidebar .colors.active{
+  left: 0px;
+  opacity: 1;
+}
+.dashboard .sidebar .colors button{
+  border: 0;
+  cursor: pointer;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 100%;
+  background: white;
+}
+.dashboard .sidebar .addNote.active,
+.dashboard .sidebar .addNote:hover{
+  background: #555;
+    transform: scale(1.1);
+}
+.dashboard .sidebar .addNote svg{
+  font-size: 2.2rem;
+  color: white;
+}
+.dashboard .sidebar .userDropdown{
+  position: relative;
+}
+.dashboard .sidebar .userDropdown .dropdown > div .userIcon,
+.dashboard .sidebar .userDropdown button{
+  width: 4rem;
+  height: 4rem;
+  border-radius: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  font-size: 2.2rem;
+  color: white;
+  border: 0;
+  background: #4caf50;
+}
+.dashboard .sidebar .userDropdown .dropdown{
+  /* display: none; */
+  position: absolute;
+  bottom: 130%;
+  z-index: 100;
+      box-shadow: 0 8px 25px #0009;
+          background: #2c2c2c;
+    border-radius: 12px;
+    padding: 12px;
+}
+.dashboard .sidebar .userDropdown .dropdown > div{
+  display: flex;
+  gap: 1.6rem;
+  align-items: center;
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+      border-bottom: 1px solid #444;
+}
+.dashboard .sidebar .userDropdown .dropdown > div h2{
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: white;
+}
+.dashboard .sidebar .userDropdown .dropdown > div h2 span{
+  font-size: 1.4rem;
+  font-weight: 400;
+  opacity: .7;
+}
+.dashboard .sidebar .userDropdown .dropdown button{
+  color: #ff6b6b;
+  font-size: 1.6rem;
+  text-decoration: none;
+  gap: .6rem;
+  padding: 1.2rem;
+  display: flex;
+  align-items: center;
+  background: transparent;
+  border-radius: 1.2rem;
+  transition: all .2s ease;
+  width: 100%;
+  justify-content: flex-start;
+}
+.dashboard .sidebar .userDropdown .dropdown button:hover{
+  background: #ff6b6b26;
+}
+.dashboard .mainSection{
+  width: calc(100% - 12rem);
+  margin-left: auto;
+  height: auto;
+      margin-right: 2rem;
+
+}
+.dashboard .mainSection .notes-container{
+grid-template-columns: repeat(5, 1fr);
+        gap: 16px;
+        display: grid;
+  gap: 2rem;
+}
+.dashboard .mainSection .notes-container .note{
+  background: rgb(100, 30, 43);
+  padding: 1.5rem;
+  border-radius: 1.2rem;
+     box-shadow: 0 4px 10px #0000004d;
+     display: flex;
+       cursor: pointer;
+       flex-direction: column;
+       transition: all .2s;
+     justify-content: space-between;
+     min-height: 180px;
+}
+     .dashboard .mainSection .notes-container .note:hover{
+          box-shadow: 0 12px 20px #0006;
+      transform: translateY(-5px);
+     }
+.dashboard .mainSection .notes-container .note h2{
+  font-size: 1.7rem;
+  font-weight: 600;
+  color: white;
+}
+.dashboard .mainSection .notes-container .note .note-footer span,
+.dashboard .mainSection .notes-container .note p{
+  font-size: 1.5rem;
+  color: white;
+  opacity: .7;
+}
+.dashboard .mainSection .notes-container .note p{
+      white-space: pre-wrap;
+    word-break: break-word;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+}
+.dashboard .mainSection .notes-container .note .note-footer span{
+  font-size: 1.2rem;
+}
+.dashboard .mainSection .notes-container .note .note-footer{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.dashboard .mainSection .notes-container .note .note-footer .note-actions{
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+}
+.dashboard .mainSection .notes-container .note .note-footer .note-actions > svg{
+  color: gold;
+  font-size: 1.5rem;
+}
+
+.toast{
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+      width: max-content;
+    background: white;
+    z-index: 100;
+    padding: 1rem 2rem;
+    font-size: 1.6rem;
+    display: flex;
+    align-items: center;
+    gap: 1.6rem;
+    border-radius: .6rem;
+}
+.toast button{
+  background: transparent;
+  border: 0;
+}
+.dashboard .mainSection .notes-container .note .note-footer .edit-btn{
+  display: flex;
+cursor: pointer;
+  justify-content: center;
+  align-items: center;
+  background: #252525;
+  border: 0;
+  width: 3.6rem;
+  height: 3.6rem;
+  border-radius: 100%;
+  font-size: 1.5rem;
+}
+.dashboard .mainSection .notes-container .note .note-footer .edit-btn svg{
+  color: white;
+  opacity: .7;
+}
+.dashboard .mainSection h1{
+  margin: 4rem 0;
+}
+
+.create-note-popup{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  z-index: 1000;
+}
+.create-note-popup .bg{
+  position: absolute;
+  top: 0;
+  left: 0;
+  backdrop-filter: blur(10px);
+  width: 100%;
+  height: 100%;
+  background: #0006;
+}
+.create-note-popup form{
+  width: 95%;
+  max-width: 60rem;
+  box-shadow: 0 20px 40px #0000004d;
+  height: 95vh;
+  z-index: 11;
+  padding: 2rem;
+  border-radius: 2.1rem;
+  display: flex;
+  gap: 1rem;
+  flex-direction: column;
+  justify-content: flex-start;
+  background: rgb(100, 30, 43);
+}
+.create-note-popup form .header{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+.create-note-popup form .header button.submit,
+.create-note-popup form .header button.back{
+  font-size: 1.6rem;
+  display: flex;
+  align-items: center;
+  gap: .6rem;
+  cursor: pointer;
+  font-weight: 500;
+  background: transparent;
+  border: 0;
+  color: #ff9f0a;
+}
+.create-note-popup form .header .actions{
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+}
+.create-note-popup form .header .delete,
+.create-note-popup form .header .pin{
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.create-note-popup form .header .delete svg,
+.create-note-popup form .header .pin svg{
+  color: white;
+  opacity: .7;
+  font-size: 1.6rem;
+}
+.create-note-popup form input,
+.create-note-popup form textarea{
+  width: 100%;
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: white;
+  background: transparent;
+  border: 0;
+  outline: none;
+}
+.create-note-popup form textarea{
+  height: 80%;
+  min-width: 100%;
+  max-width: 100%;
+  font-size: 1.9rem;
+  font-weight: 400;
+}
+
+
+@media screen and (max-width : 1440px) {
+.dashboard .mainSection .notes-container{
+  grid-template-columns: repeat(4, 1fr);
+}
+}
+
+@media screen and (max-width : 900px) {
+.dashboard .mainSection .notes-container{
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.4rem;
+}
+.faqs h1, .features h1, .dashboard .mainSection h1, .heroSection .herosection-left h1{
+  font-size: 3.8rem;
+  line-height: 4.2rem;
+}
+.dashboard .mainSection .notes-container .note .note-footer span, .dashboard .mainSection .notes-container .note p{
+  font-size: 1.4rem;
+}
+.dashboard .mainSection .notes-container .note h2{
+  font-size: 1.6rem;
+}
+.dashboard .sidebar .addNote svg{
+  font-size: 1.8rem;
+}
+.dashboard .sidebar .userDropdown .dropdown > div .userIcon, .dashboard .sidebar .userDropdown button,
+.dashboard .sidebar .addNote,
+.dashboard .mainSection .notes-container .note .note-footer .edit-btn{
+  width: 3.2rem;;
+  height: 3.2rem;
+}
+.dashboard .sidebar .userDropdown button{
+  font-size: 1.8rem;
+}
+
+
+.heroSection{
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 5rem;
+}
+.heroSection .herosection-left{
+  width: 100%;
+  max-width: 100%;
+}
+}
+@media screen and (max-width : 768px) {
+  .create-note-popup form textarea{
+    font-size: 1.6rem;
+  }
+ 
+  .create-note-popup form input{
+    font-size: 2.2rem;
+  }
+  .dashboard .mainSection{
+    width: calc(100% - 8.5rem);
+    margin-right: 1rem;
+}
+.dashboard .mainSection .notes-container{
+  grid-template-columns: repeat(2, 1fr);
+}
+.dashboard .sidebar{
+      width: 6rem;
+}
+.heroSection,
+.faqs,
+.features{
+  padding: 8rem 0;
+}
+.faqs h1, .features h1, .dashboard .mainSection h1, .heroSection .herosection-left h1{
+  font-size: 3.2rem;
+  line-height: 3.8rem;
+}
+.dashboard .mainSection h1 {
+    margin: 3rem 0;
+}
+.features .cards{
+  flex-wrap: wrap;
+  gap: 1%;
+  row-gap: 1rem;
+}
+.features .cards .card{
+  width: 49%;
+  max-width: 100%;
+}
+  }
+  @media screen and (max-width : 500px) {
+    header nav .btn,
+    header nav a{
+      font-size: 1.4rem;
+    }
+        .dashboard .mainSection {
+        width: calc(100% - 8rem);
+      }
+      .dashboard .sidebar .userDropdown .dropdown button,
+       .create-note-popup form .header button.submit, .create-note-popup form .header button.back{
+    font-size: 1.4rem;
+  }
+  .dashboard .mainSection h1 {
+    margin: 2rem 0;
+}
+.features .cards .card{
+  width: 100%;
+}
+.heroSection,
+.faqs,
+.features{
+  padding: 6rem 0;
+}
+.faqs h1, .features h1, .dashboard .mainSection h1, .heroSection .herosection-left h1{
+  font-size: 2.8rem;
+  line-height: 3.2rem;
+}
+.faqs > p, .features > p, .heroSection .herosection-left p{
+  font-size: 1.8rem;
+  line-height: 2rem;
+}
+  }
+  @media screen and (max-width : 420px) {
+    .dashboard .mainSection .notes-container .note .note-footer span, .dashboard .mainSection .notes-container .note p{
+      font-size: 1.2rem;
+    }
+        .dashboard .mainSection {
+        width: calc(100% - 7rem);
+    }
+    .dashboard .mainSection .notes-container .note{
+      padding: 1rem;
+      min-height: 155px;
+    }
+    .dashboard .sidebar .userDropdown .dropdown > div .userIcon, .dashboard .sidebar .userDropdown button, .dashboard .sidebar .addNote, .dashboard .mainSection .notes-container .note .note-footer .edit-btn{
+      width: 2.8rem;
+      height: 2.8rem;
+
+    }
+        .dashboard .sidebar {
+        width: 5rem;
+    }
+    .heroSection,
+.faqs,
+.features{
+  padding: 5rem 0;
+}
+  }
