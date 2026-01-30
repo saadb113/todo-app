@@ -88,7 +88,7 @@ const [toastText, settoastText] = useState(null);
                     <div className="create-note-popup">
                         <div className="bg" onClick={()=>setNote({...Note,color : null})}></div>
                         <form onSubmit={(event)=>handleSubmit(event,Note._id)} style={{background : Note.color}}>
-                            {console.log(Note._id)}
+                            
                         <div className="header">
                         <button type='button' className="back" onClick={()=>setNote({...Note,color : null})}>
                             <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><polyline points="15 18 9 12 15 6"></polyline></svg>
@@ -105,9 +105,9 @@ const [toastText, settoastText] = useState(null);
                                     )
                                 }
                             </button>
-                            <button onClick={()=>deleteNote(Note._id)} className="delete">
+                           {Note._id && <button onClick={()=>deleteNote(Note._id)} className="delete">
                                 <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" class="action-icon" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path><line x1="10" y1="11" x2="10" y2="17"></line><line x1="14" y1="11" x2="14" y2="17"></line></svg>
-                            </button>
+                            </button>}
                             <button type='submit' className='submit'>
                                 {progress ? "Saving..." : 'Done'}
                             </button>

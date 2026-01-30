@@ -242,6 +242,21 @@ width: 100%;
     border: 0;
         border-radius: 6px;
 }
+.form .password {
+  display: flex;
+  margin-bottom: 2rem;
+
+    flex-direction: column;
+}
+.form .password span{
+  font-size: 1rem;
+  margin-top: .4rem;
+  margin-left: 1.2rem;
+  color: rgb(255 255 255 / 70%);
+}
+.form .password input{
+  margin-bottom: 0;
+}
 .form button{
   border-radius: .6rem;
   border: 0;
@@ -324,7 +339,9 @@ width: 100%;
   justify-content: center;
   align-items: center;
   cursor: pointer;
-  font-size: 2.2rem;
+  font-size: 1.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
   color: white;
   border: 0;
   background: #4caf50;
@@ -404,15 +421,14 @@ grid-template-columns: repeat(5, 1fr);
       transform: translateY(-5px);
      }
 .dashboard .mainSection .notes-container .note h2{
-  font-size: 1.7rem;
+  font-size: 2rem;
   font-weight: 600;
   color: white;
 }
 .dashboard .mainSection .notes-container .note .note-footer span,
 .dashboard .mainSection .notes-container .note p{
-  font-size: 1.5rem;
-  color: white;
-  opacity: .7;
+  font-size: 1.4rem;
+  color: rgb(255 255 255 / 70%);
 }
 .dashboard .mainSection .notes-container .note p{
       white-space: pre-wrap;
@@ -472,8 +488,7 @@ cursor: pointer;
   font-size: 1.5rem;
 }
 .dashboard .mainSection .notes-container .note .note-footer .edit-btn svg{
-  color: white;
-  opacity: .7;
+  color: rgb(255 255 255 / 70%);
 }
 .dashboard .mainSection h1{
   margin: 4rem 0;
@@ -548,8 +563,7 @@ cursor: pointer;
 }
 .create-note-popup form .header .delete svg,
 .create-note-popup form .header .pin svg{
-  color: white;
-  opacity: .7;
+  color: rgb(255 255 255 / 70%);
   font-size: 1.6rem;
 }
 .create-note-popup form input,
@@ -571,6 +585,71 @@ cursor: pointer;
 }
 
 
+footer{
+  padding: 6rem 0 3rem;
+}
+footer .container{
+  max-width: 117rem;
+  width: 95%;
+  gap: 2rem;
+  flex-wrap: wrap;
+  display: flex;
+  margin: auto;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+footer .container h2{
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 1.6rem;
+  color: white;
+}
+footer .copyright,
+footer .container p,
+footer .container a{
+font-size: 1.4rem;
+color: rgb(255 255 255 / 70%);
+line-height: 1.9rem;
+text-decoration: none;
+max-width: 32rem;
+}
+footer .copyright{
+  /* margin: auto; */
+  max-width: 117rem;
+  width: 95%;
+  margin: auto;
+  margin-top: 5rem;
+}
+footer .container .links{
+  display: flex;
+  flex-direction: column;
+}
+footer .container a{
+  margin-bottom: 1.4rem;
+}
+footer .container a:hover{
+  color: white;
+}
+footer .container .social .social-links{
+  display: flex;
+  gap: 1.6rem;
+  align-items: center;
+}
+footer .container .social a{
+  width: 3.6rem;
+  height: 3.6rem;
+  border-radius: 1rem;
+  background: #2f2f2f;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  transition: all .25s ease, transform .25s ease;
+}
+footer .container .social a:hover{
+      background: #343434;
+    transform: translateY(-3px);
+}
 @media screen and (max-width : 1440px) {
 .dashboard .mainSection .notes-container{
   grid-template-columns: repeat(4, 1fr);
@@ -658,6 +737,16 @@ cursor: pointer;
 }
   }
   @media screen and (max-width : 500px) {
+    footer .container h2{
+      font-size: 1.6rem;
+    }
+    footer .copyright, footer .container p, footer .container a{
+      font-size: 1.2rem;
+    }
+    footer .container .social a{
+      width: 3.2rem;
+      height: 3.2rem;
+    }
     header nav .btn,
     header nav a{
       font-size: 1.4rem;

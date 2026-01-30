@@ -37,7 +37,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/signin" element={userData ? <Navigate to="/dashboard"/> : <Login handleLogin={handleLogin}/> } />
-          <Route path="/signup" element={<Signup handleLogin={handleLogin}/>} />
+          <Route path="/signup" element={userData ? <Navigate to="/dashboard"/> : <Signup/>} />
           <Route path="/dashboard" element={userData != null ? <Dashboard user={userData}/> : <Navigate to="/signin"/> } />
         </Routes>
       )}

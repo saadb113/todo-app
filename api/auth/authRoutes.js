@@ -7,10 +7,10 @@ const jwt = require("jsonwebtoken")
 const Note = require("../db/noteSchema")
 require('dotenv').config()
 const validateSignup = [
-    body('firstName').isString().notEmpty(),
+    body('firstName').isString().notEmpty().withMessage("First name is required"),
     body('lastName').isString().optional(),
-    body('email').isEmail().normalizeEmail().notEmpty(),
-    body('password').isLength({ min: 6 }).notEmpty()
+    body('email').isEmail().normalizeEmail().notEmpty().withMessage("Valid email is required"),
+    body('password').isLength({ min: 6 }).notEmpty().withMessage("Password must be at least 6 characters long")
 ]
 const validateSignin = [
     body("email").isEmail().normalizeEmail().notEmpty(),
@@ -19,6 +19,7 @@ const validateSignin = [
 router.post("/signup", validateSignup, async (req, res) => {
     // INPUT VALIDATION 
     const error = validationResult(req)
+    console.log(error);
     if (error?.errors[0]?.msg) return res.status(400).json({status:400, message: `${error.errors[0].path}: ${error.errors[0].msg}` })
 
     // USER VALIDATION 

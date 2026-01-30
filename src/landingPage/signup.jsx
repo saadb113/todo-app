@@ -27,7 +27,7 @@ function App({handleLogin}) {
             settoastText(data.message)
             if(data.status === 201){
                 localStorage.setItem("token", data.token)
-                handleLogin(data.user)
+                navigate('/signin')
             }
         })
     }
@@ -49,7 +49,10 @@ function App({handleLogin}) {
                 <input required onChange={(event)=>setForm({...form, firstName : event.target.value})} type="text" placeholder="First Name" />
                 <input onChange={(event)=>setForm({...form, lastName : event.target.value})} type="text" placeholder="Last Name" />
                 <input required onChange={(event)=>setForm({...form, email : event.target.value})} type="email" placeholder="Email" />
+                <div className='password'>
                 <input required onChange={(event)=>setForm({...form, password : event.target.value})} type="password" placeholder="Password" />
+                <span>min 6 length</span>
+                </div>
                 <button type="submit">Sign Up</button>
                 <p>Already have an account? <Link to="/signin">Sign In</Link></p>
             </form>
