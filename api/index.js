@@ -6,7 +6,7 @@ db();
 const authRoutes = require("./auth/authRoutes")
 const authenticate = require("./dashboard/authenticate")
 const Note = require("./dashboard/note")
-    
+require('dotenv').config()
 app.use(express.urlencoded({ extended: true }))
 app.use(express.json())
 app.use(cors())

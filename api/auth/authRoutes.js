@@ -5,6 +5,7 @@ const { body, validationResult } = require("express-validator")
 const bcrypt = require("bcryptjs")
 const jwt = require("jsonwebtoken")
 const Note = require("../db/noteSchema")
+require('dotenv').config()
 const validateSignup = [
     body('firstName').isString().notEmpty(),
     body('lastName').isString().optional(),
@@ -59,7 +60,7 @@ router.post("/signin",validateSignin, async (req, res) => {
     if(!comparePassword) return res.status(400).json({status:400, message: "Invalid password" })
 
     // CREATE TOKEN 
-    const token = jwt.sign({email : findUser.email}, "Saad")
+    const token = jwt.sign({email : findUser.email}, process.env.JWT_SECRET)
     res.status(200).json({status : 201, message : "Logged in successfully", token,user:findUser})
     })
 

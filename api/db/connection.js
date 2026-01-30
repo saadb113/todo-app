@@ -1,6 +1,7 @@
 const mongoose = require("mongoose")
+require('dotenv').config()
 const connection = async()=>{
-    await mongoose.connect("mongodb+srv://saadb451:Saadbhaizindabaad1!@cluster0.vbcrt.mongodb.net/").then(data=>{
+    await mongoose.connect(process.env.MONGO_URI).then(data=>{
         console.log("connected");
     });
 } 

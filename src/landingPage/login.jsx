@@ -5,13 +5,14 @@ import {Link, useNavigate} from "react-router-dom"
 import Toast from "../dashboard/components/toast"
 
 function App({handleLogin}) {
+    const [loading, setloading] = useState(false);
     const navigate = useNavigate()
 const [toastText, settoastText] = useState(null);
 
       const [form, setForm] = useState({});
     const handleSubmit = async(e)=>{
         e.preventDefault()
-
+setloading(true)
         await fetch("https://todo-app-7ffy.onrender.com/auth/signin", {
             method: "POST",
             headers : {
@@ -22,6 +23,7 @@ const [toastText, settoastText] = useState(null);
                 password : form.password
             })
         }).then(res=> res.json()).then(data=>{
+            setloading(false)
             settoastText(data.message)
             console.log(data.message);
             if(data.status === 201){
@@ -45,9 +47,9 @@ const [toastText, settoastText] = useState(null);
             </header>
             <form onSubmit={(e)=>handleSubmit(e)} className='signin form'>
                 <h1>Login</h1>
-                  <input onChange={(event)=>setForm({...form, email : event.target.value})} type="email" placeholder="Email" />
-                <input onChange={(event)=>setForm({...form, password : event.target.value})} type="password" placeholder="Password" />
-                <button type="submit">Sign In</button>
+                  <input required onChange={(event)=>setForm({...form, email : event.target.value})} type="email" placeholder="Email" />
+                <input required min={6} onChange={(event)=>setForm({...form, password : event.target.value})} type="password" placeholder="Password" />
+                <button type="submit">{loading ? "Logging In..." : "Sign In"  }</button>
                 <p>Don't have an account? <Link to="/signup">Sign Up</Link></p>
             </form>
                         {
