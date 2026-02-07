@@ -10,7 +10,14 @@ function App({handleLogin}) {
 const [toastText, settoastText] = useState(null);
 
       const [form, setForm] = useState({});
-    const handleSubmit = async(e)=>{
+      const guestLoginHandler = (e)=>{
+        setForm({
+          email : "guest1@gmail.com",
+          password : "guest_1_789"
+        })
+        handleSubmit(e,"guest")
+      }
+    const handleSubmit = async(e,userRole)=>{
         e.preventDefault()
 setloading(true)
         await fetch("https://todo-app-7ffy.onrender.com/auth/signin", {
@@ -19,8 +26,8 @@ setloading(true)
                 "Content-Type": "application/json"
             },
             body: JSON.stringify({
-                email : form.email,
-                password : form.password
+                email : userRole == "guest" ? "guest1@gmail.com" : form.email,
+                password : userRole == "guest" ? "guest_1_789" : form.password
             })
         }).then(res=> res.json()).then(data=>{
             setloading(false)
@@ -47,10 +54,11 @@ setloading(true)
             </header>
             <form onSubmit={(e)=>handleSubmit(e)} className='signin form'>
                 <h1>Login</h1>
-                  <input required onChange={(event)=>setForm({...form, email : event.target.value})} type="email" placeholder="Email" />
-                <input required min={6} onChange={(event)=>setForm({...form, password : event.target.value})} type="password" placeholder="Password" />
+                  <input required onChange={(event)=>setForm({...form, email : event.target.value})} type="email" placeholder="Email" value={form.email}/>
+                <input required min={6} onChange={(event)=>setForm({...form, password : event.target.value})} type="password" placeholder="Password" value={form.password}/>
                 <button type="submit">{loading ? "Logging In..." : "Sign In"  }</button>
-                <p>Don't have an account? <Link to="/signup">Sign Up</Link></p>
+                <p>Don't have an account? <Link to="/signup">Sign Up</Link> <br />Or login as a <a onClick={(e)=>guestLoginHandler(e)} style={{cursor : "pointer"}}>Guest</a></p>
+                <p></p>
             </form>
                         {
                             toastText && (
